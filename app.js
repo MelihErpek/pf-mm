@@ -4,7 +4,7 @@ const axios = require("axios");
 const fs = require("fs");
 const { Configuration, OpenAI } = require("openai");
 require("dotenv").config();
-
+const path = require('path');
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -13,6 +13,8 @@ const openai = new OpenAI({
 });
 
 app.get("/", async (req, res) => {
+const filePath = path.join(__dirname, 'data.jsonl');
+  console.log(filePath)
   res.json("çalışıyor");
 });
 
