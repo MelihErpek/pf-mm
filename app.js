@@ -27,7 +27,7 @@ const filePath = path.join(__dirname, 'data.jsonl');
 app.get("/getfile", async (req, res) => {
   try {
     const file = await openai.files.create({
-      file: fs.createReadStream("./data.jsonl"),
+      file: fs.createReadStream("/var/task/data.jsonl"),
       purpose: "assistants",
     });
     res.json(file);
