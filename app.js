@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 const openai = new OpenAI({
-  apiKey: process.env.DB_HOST,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 const upload = multer({ dest: "uploads/" });
 
