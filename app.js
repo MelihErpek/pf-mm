@@ -24,7 +24,7 @@ app.get("/", async (req, res) => {
 
 app.get("/getfile", async (req, res) => {
   const file = await openai.files.create({
-    file: fs.createReadStream("data.jsonl"),
+    file: fs.createReadStream("./data.jsonl"),
     purpose: "assistants",
   });
   res.json(file);
