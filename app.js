@@ -14,10 +14,6 @@ app.use(cors());
 const openai = new OpenAI({
   apiKey: process.env.DB_HOST,
 });
-// const configuration = new Configuration({
-//   apiKey: "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", // API anahtarını ortam değişkeninden al
-// });
-// const openai = new OpenAIApi(configuration);
 const upload = multer({ dest: "uploads/" });
 
 async function processPDF(filePath) {
