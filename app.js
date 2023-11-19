@@ -15,7 +15,7 @@ const openai = new OpenAI({
 app.get("/", async (req, res) => {
 const filePath = path.join(__dirname, 'data.jsonl');
   console.log(filePath)
-  res.json("çalışıyor");
+  res.json(filePath);
 });
 
 
