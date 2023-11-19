@@ -23,12 +23,17 @@ app.get("/", async (req, res) => {
 
 
 app.get("/getfile", async (req, res) => {
-  const file = await openai.files.create({
-    file: fs.createReadStream("./data.jsonl"),
-    purpose: "assistants",
-  });
-  res.json(file);
+  try {
+    const file = await openai.files.create({
+      file: fs.createReadStream("data.jsonl"),
+      purpose: "assistants",
+    });
+    res.json(file);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 });
+
 
 app.listen(5000, () => {
   console.log("Sunucu port 5000'de çalışıyor");
